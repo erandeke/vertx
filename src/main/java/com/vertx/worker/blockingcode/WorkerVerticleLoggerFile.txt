@@ -1,0 +1,4 @@
+18:35:42.575 [main] WARN  io.netty.resolver.dns.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+18:35:42.603 [vert.x-eventloop-thread-0] DEBUG com.vertx.worker.blockingcode.WorkerVerticle - start {}com.vertx.worker.blockingcode.WorkerVerticle
+18:35:42.608 [vert.x-worker-thread-0] DEBUG com.vertx.worker.blockingcode.WorkerVerticle - Executing blocking code
+18:35:42.714 [vert.x-eventloop-thread-0] DEBUG com.vertx.worker.blockingcode.WorkerVerticle - Blocking call done

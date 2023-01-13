@@ -1,0 +1,4 @@
+21:49:15.529 [main] WARN  io.netty.resolver.dns.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+21:49:15.558 [vert.x-eventloop-thread-0] DEBUG com.vertx.eventbus.ResquestResponse - Sending message Hey there!!
+21:49:15.576 [vert.x-eventloop-thread-1] DEBUG com.vertx.eventbus.ResquestResponse - Received message Hey there!!
+21:49:15.580 [vert.x-eventloop-thread-0] DEBUG com.vertx.eventbus.ResquestResponse - Received Response Got ur message , Thanks!
