@@ -21,9 +21,13 @@ public class Asset {
     this.price = price;
   }
 
-  public JsonObject toJsonObject() {
-    return JsonObject.mapFrom(this);
+
+  @Override
+  public String toString() {
+    return "Asset{" +
+      "productId='" + productId + '\'' +
+      ", productName='" + productName + '\'' +
+      ", price=" + price +
+      '}';
   }
-
-
 }

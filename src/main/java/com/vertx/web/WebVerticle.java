@@ -4,6 +4,7 @@ import com.vertx.eventbus.PublishSubscribeEventBus;
 import com.vertx.eventloop.EventLoopVerticle;
 import com.vertx.web.model.Asset;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.Json;
@@ -22,13 +23,14 @@ public class WebVerticle extends AbstractVerticle {
 
   public static void main(String[] args) {
     var vertx = Vertx.vertx();
-    vertx.deployVerticle(new WebVerticle(), res -> {
-      if (res.succeeded()) {
-        LOG.info("Res succeeded");
-      } else {
-        LOG.error("Res succeeded {}", res.cause());
-      }
-    });
+    vertx.deployVerticle(WebVerticle.class.getName(), new DeploymentOptions().setInstances(4),
+      res -> {
+        if (res.succeeded()) {
+          LOG.info("Res succeeded");
+        } else {
+          LOG.error("Res succeeded {}", res.cause());
+        }
+      });
   }
 
 
@@ -50,9 +52,9 @@ public class WebVerticle extends AbstractVerticle {
 
       var productId = cts.pathParam("productId");
       var asset = initRandomAssets(productId);
-      JsonObject response = asset.toJsonObject();
+      String response = asset.toString();
       LOG.debug("PATH {} responds with {}", cts.normalizedPath(), asset);
-      cts.response().end(response.toBuffer());
+      cts.response().end(response);
     });
 
     vertx.createHttpServer().requestHandler(router).exceptionHandler(error -> {
